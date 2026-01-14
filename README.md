@@ -6,7 +6,8 @@ Here are the steps to install Fusion Vmware and Windows on Fusion VM:
 
 - [Install Fusion Vmware](https://www.vmware.com/ca/products/fusion/fusion-evaluation.html). Fusion is free for students; click on ["Register License for Personal Use"](https://customerconnect.vmware.com/web/vmware/evalcenter?p=fusion-player-personal) 
 - [Install Windows 10 on Fusion VM](https://www.groovypost.com/howto/create-custom-virtual-machine-vmware-fusion/)
-
+# Git Book
+[Here is the open git book](https://git-scm.com/book/en/v2)
 # Lecture Notes and Recordings
 - [NAA](./NAA)
 - [NBB](./NBB)
