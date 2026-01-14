@@ -7,6 +7,7 @@ int& referenceOf(int& val) {
 
 int main() {
    int a = 20;
+   cout << referenceOf(a) << endl;
    referenceOf(a) += 5;  // addTen(int& val = a) += 5;
    cout << a << endl;
 
