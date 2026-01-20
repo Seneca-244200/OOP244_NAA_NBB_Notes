@@ -1,17 +1,5 @@
 #include <iostream>
 using namespace std;
-
-void resize( int*& curMem, size_t& curSize, size_t newSize ) {
-   int* temp = new int[newSize];
-   for ( size_t i = 0; i < curSize; i++ ) { // copy cur data
-      temp[i] = curMem[i];
-   }
-   delete[] curMem;
-   curMem = temp;
-   curSize = newSize;
-}
-
-
 int main( ) {
    int* cnt{};
    cnt = new int{};
