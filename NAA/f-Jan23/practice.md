@@ -7,23 +7,23 @@ Write a function that:
 * **Receives two parameters:**
 
   * A C-string (`const char *`) — a null-terminated character array
-  * A **pointer passed by reference** (`char *&`) to receive the new string address
+  * A **pointer passed by reference** (`char *&`) to receive the new string reference
 
 * **Dynamically allocates memory** for a complete copy of the input string (**including the null terminator**)
 
-* Stores the address of the newly allocated copy in `*destination`
+* Stores the address of the newly allocated copy in `destination`
 
-* Returns an integer status code:
+* Returns a bool status code:
 
-  * `0` on success
-  * `-1` if memory allocation fails
+  * true on success
+  * false if memory allocation fails or the source is null
 
 ---
 
 ### Function signature (use exactly this)
 
 ```c
-int duplicate_string(const char *source, char **destination);
+bool duplicate_string(const char *source, char *&destination);
 ```
 
 ---
@@ -31,12 +31,12 @@ int duplicate_string(const char *source, char **destination);
 ### Requirements / Rules
 
 * The function **must not modify** the source string.
-* If `source` is `NULL`, set `*destination = NULL` and return `0`.
+* If `source` is `NULL`, set `*destination = NULL` and return false.
 * The allocated memory must be large enough to hold the entire string **including** the null terminator (`'\0'`).
-* Use `malloc` for dynamic allocation.
+* Use `new` for dynamic allocation.
 * Always check whether the allocation succeeded.
-* Copy the string contents (you may use `strcpy`, `memcpy`, or a manual loop).
-* The caller is responsible for calling `free()` on the allocated string when it is no longer needed.
+* Copy the string contents (you may use `strcpy`, or a manual loop).
+* The caller is responsible for calling `new` on the allocated string when it is no longer needed.
 * Do **not** use any global variables.
 
 ---
@@ -44,18 +44,18 @@ int duplicate_string(const char *source, char **destination);
 ### Expected Behavior Examples
 
 ```c
-char *copy = NULL;
-int result;
+char *copy {};
+bool result;
 
 // Normal case
-result = duplicate_string("Hello", &copy);
-// → result == 0, copy points to a new heap-allocated "Hello\0"
+result = duplicate_string("Hello", copy);
+// → true, copy points to a new heap-allocated "Hello\0"
 
-result = duplicate_string(NULL, &copy);
-// → result == 0, copy == NULL
+result = duplicate_string(NULL, copy);
+// → false, copy == NULL
 
-result = duplicate_string("", &copy);
-// → result == 0, copy points to a new heap-allocated empty string "\0"
+result = duplicate_string("", copy);
+// → true, copy points to a new heap-allocated empty string "\0"
 ```
 
 ---
@@ -68,17 +68,8 @@ result = duplicate_string("", &copy);
    * Copying a normal string
    * Modifying the copy (to prove it’s independent)
    * Printing both the original and the copy **before and after** modification
-   * Copying a `NULL` pointer
+   * Copying a `nullptr` pointer
    * Freeing any allocated memory
-3. *(Optional bonus)* Demonstrate handling an **empty string** and/or a **very long string**.
-
----
-
-### Hints (do not share full solution with student)
-
-* Use `strlen()` to determine how many bytes to allocate.
-* Allocate `strlen(source) + 1` bytes to include the null terminator.
-* The second parameter is a **pointer to a pointer** (`char **`) so the function can update the caller’s pointer.
 
 ---
 
