@@ -1,49 +1,74 @@
 #include <iostream>
 #include "ValidatedInt.h"
+#include "cstr.h"
 using namespace std;
 namespace seneca {
 
      //:: is called scope resolution, in english 
      // ValidatedInt's initialze
-// Member function: initializes the object
-   void ValidatedInt::initialize(int val, int minv, int maxv) {
-      minValue = minv;
-      maxValue = maxv;
+// Member function: initializes the object, including dynamic allocation for m_title
+   void ValidatedInt::initialize(const char* titleParam, int val, int minv, int maxv) {
+      // Allocate and copy the m_title (dynamic C-string)
+      m_title = nullptr;
+      if (titleParam) {
+         m_title = new char[strlen(titleParam) + 1];
+         strcpy(m_title, titleParam);
+      }
+
+      m_minValue = minv;
+      m_maxValue = maxv;
       setValue(val);  // Reuse setValue for validation
+   }   // depends on what you call a default m_value for this class based
+   // on your business logic
+   ValidatedInt::ValidatedInt(const char* titleParam) {
+      initialize(titleParam , 0, -100, 100);
    }
 
-   // Member function: validates and sets the value (clamps to [min, max])
+   ValidatedInt::ValidatedInt(const char* titleParam, int val, int minv, int maxv) {
+      initialize(titleParam, val, minv, maxv);
+   }
+
+   ValidatedInt::~ValidatedInt() {
+      release();
+   }
+
+   // Member function: validates and sets the m_value (clamps to [min, max])
    void ValidatedInt::setValue(int newVal) {
-      if (newVal < minValue) {
-         value = minValue;
+      if (newVal < m_minValue) {
+         m_value = m_minValue;
       }
-      else if (newVal > maxValue) {
-         value = maxValue;
+      else if (newVal > m_maxValue) {
+         m_value = m_maxValue;
       }
       else {
-         value = newVal;
+         m_value = newVal;
       }
    }
-   // Member function: gets the current value
+   // Member function: gets the current m_value
    int ValidatedInt::getValue() const {
-      return value;
+      return m_value;
    }
 
    // Member function: displays the current state
    void ValidatedInt::display() const {
-      std::cout << "Value: " << value
-         << " (range: " << minValue
-         << " to " << maxValue << ")" << std::endl;
+      std::cout
+         << "Title: " << (m_title ? m_title : "No Title")
+         << " Value: " << m_value
+         << " (range: " << m_minValue
+         << " to " << m_maxValue << ")" << std::endl;
    }
 
-   // Member function: adds an amount to the value (with validation)
+   // Member function: adds an amount to the m_value (with validation)
    void ValidatedInt::addToValue(int amount) {
-      setValue(value + amount);  // Reuse setValue to clamp after addition
+      setValue(m_value + amount);  // Reuse setValue to clamp after addition
    }
 
-   // Member function: reduces the value by an amount (with validation)
+   // Member function: reduces the m_value by an amount (with validation)
    void ValidatedInt::reduceValue(int amount) {
-      setValue(value - amount);  // Reuse setValue to clamp after subtraction
+      setValue(m_value - amount);  // Reuse setValue to clamp after subtraction
    }
-
+   void ValidatedInt::release() {
+      delete[] m_title;
+      m_title = nullptr;
+   }
 }

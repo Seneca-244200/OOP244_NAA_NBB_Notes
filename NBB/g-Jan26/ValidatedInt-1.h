@@ -3,8 +3,8 @@
 namespace seneca {
    struct ValidatedInt {
       int value;
-      int minValue;
-      int maxValue;
+      int m_minValue;
+      int m_maxValue;
    };
    void initialize(ValidatedInt& vi,int val, int minv, int maxv);
    void setValue(ValidatedInt& vi, int newVal);

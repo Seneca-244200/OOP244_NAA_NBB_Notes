@@ -123,9 +123,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="cstr.h" />
     <ClInclude Include="ValidatedInt.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="cstr.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ValidatedInt.cpp" />
   </ItemGroup>

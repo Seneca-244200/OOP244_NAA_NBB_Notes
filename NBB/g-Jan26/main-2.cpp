@@ -4,13 +4,9 @@
 using namespace seneca;
 
 int main() {
+   ValidatedInt vi;
 
-   ValidatedInt def;
-
-   ValidatedInt vi("OOP244 Mark", 80, 0, 100);
-
-   def.display();
-
+   vi.initialize(50, 0, 100);
    vi.display();                    // Value: 50 (range: 0 to 100)
 
    vi.addToValue(30);              // Adds 30 -> 80 (within range)
@@ -28,6 +24,12 @@ int main() {
    vi.setValue(75);                // Back to valid
    vi.display();                   // Value: 75 (range: 0 to 100)
 
+   std::cout << "\nDirectly modifying 'value' without validation:" << std::endl;
+   vi.value = 150;                 // Set outside max (no clamping happens)
+   vi.display();                   // Value: 150 (range: 0 to 100) — INVALID!
+
+   vi.value = -50;                 // Set outside min (no clamping happens)
+   vi.display();                   // Value: -50 (range: 0 to 100) — INVALID!
 
 
    return 0;
