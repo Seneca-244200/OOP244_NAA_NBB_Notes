@@ -7,7 +7,7 @@ Write a function that:
 * **Receives two parameters:**
 
   * A C-string (`const char *`) — a null-terminated character array
-  * A **pointer passed by reference** (`char **`) to receive the new string address
+  * A **pointer passed by reference** (`char *&`) to receive the new string address
 
 * **Dynamically allocates memory** for a complete copy of the input string (**including the null terminator**)
 
