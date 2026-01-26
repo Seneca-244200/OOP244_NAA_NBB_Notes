@@ -2,16 +2,19 @@
 #define SENECA_VALIDATED_H
 namespace seneca {
    struct ValidatedInt {
+      // attributes: hold specs
       int value;
       int minValue;
       int maxValue;
+      // methods: do things uisng the specs
+      void initialize(int val, int minv, int maxv);
+      void setValue( int newVal);
+      int getValue()const; // (Only C++)I can not change my owner
+                           // getValue method, cannot change the attribute
+      void display()const; // I can not change my owner
+      void addToValue(int amount);
+      void reduceValue(int amount);
    };
-   void initialize(ValidatedInt& vi,int val, int minv, int maxv);
-   void setValue(ValidatedInt& vi, int newVal);
-   int getValue(const ValidatedInt& vi);
-   void display(const ValidatedInt& vi);
-   void addToValue(ValidatedInt& vi, int amount);
-   void reduceValue(ValidatedInt& vi, int amount);
 
 }
 #endif 

@@ -3,43 +3,47 @@
 using namespace std;
 namespace seneca {
 
-
-
-
-   void initialize(ValidatedInt& vi,int val, int minv, int maxv) {
-      vi.minValue = minv;
-      vi.maxValue = maxv;
-      setValue(vi, val);  // Reuse setValue for validation
+     //:: is called scope resolution, in english 
+     // ValidatedInt's initialze
+// Member function: initializes the object
+   void ValidatedInt::initialize(int val, int minv, int maxv) {
+      minValue = minv;
+      maxValue = maxv;
+      setValue(val);  // Reuse setValue for validation
    }
 
-   void setValue(ValidatedInt& vi, int newVal) {
-      if (newVal < vi.minValue) {
-         vi.value = vi.minValue;
+   // Member function: validates and sets the value (clamps to [min, max])
+   void ValidatedInt::setValue(int newVal) {
+      if (newVal < minValue) {
+         value = minValue;
       }
-      else if (newVal > vi.maxValue) {
-         vi.value = vi.maxValue;
+      else if (newVal > maxValue) {
+         value = maxValue;
       }
       else {
-         vi.value = newVal;
+         value = newVal;
       }
    }
-
-   int getValue(const ValidatedInt& vi) {
-      return vi.value;
+   // Member function: gets the current value
+   int ValidatedInt::getValue() const {
+      return value;
    }
 
-   void display(const ValidatedInt& vi) {
-      cout << "Value: " << vi.value
-         << " (range: " << vi.minValue
-         << " to " << vi.maxValue << ")" << std::endl;
+   // Member function: displays the current state
+   void ValidatedInt::display() const {
+      std::cout << "Value: " << value
+         << " (range: " << minValue
+         << " to " << maxValue << ")" << std::endl;
    }
 
-   void addToValue(ValidatedInt& vi, int amount) {
-      setValue(vi, vi.value + amount);
+   // Member function: adds an amount to the value (with validation)
+   void ValidatedInt::addToValue(int amount) {
+      setValue(value + amount);  // Reuse setValue to clamp after addition
    }
 
-   void reduceValue(ValidatedInt& vi, int amount) {
-      setValue(vi, vi.value - amount);
+   // Member function: reduces the value by an amount (with validation)
+   void ValidatedInt::reduceValue(int amount) {
+      setValue(value - amount);  // Reuse setValue to clamp after subtraction
    }
 
 }
