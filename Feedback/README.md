@@ -10,7 +10,7 @@ Since the feedbacks are given on each workshop you will not lose any marks on th
 |[CA](#ca) |  Custom header files must be included after library header files|
 |[CH](#ch) | C header file included in a C++ program |
 |[CM](#cm)  |  Unnecessary comments or Commented code left in the release version |
-|[COL](#col)  | GitHub collaboration invitation was not received |
+|[COL](#col)  | GitHub collaboration invitation was not received or the repository is problematic |
 |[CRT](#crt) |  `#define _CRT_SECURE_NO_WARNINGS` should be the first line in your .cpp file and never in a header file|
 |[CS2](#cs2)| Statically allocated cStrings (char arrays) are unnecessarily too big |
 |[CSL](#csl)| Statically allocated cStrings need one extra character for null byte |
@@ -1676,10 +1676,19 @@ Unnecessary or redundant logic used in code.
 [Back to Feedback List](#list)
 ------------------------------------
 ## COL
-### Your GitHub Collaboration Email was not received
-### The Fix
+### Your GitHub Repository is not accessible or incorrectly set up.
+### Problematic part
 
-[Follow the instructions in workshop zero](https://github.com/Seneca-244200/OOP-Workshops/tree/main/WS00)
+One of the following may have happened:  
+- The collaboration invitation was not sent or it is expired
+- The repository readme file is not formatted correctly
+- The repository readme file does not have the information requested
+
+### The Fix
+[Follow the instructions in workshop zero](https://github.com/Seneca-244200/OOP-Workshops/tree/main/WS00) and make sure all requirement are met. 
+
+
+  
 
 ------------------------------------
 [Back to Feedback List](#list)
