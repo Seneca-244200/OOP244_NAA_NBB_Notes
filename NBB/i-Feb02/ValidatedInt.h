@@ -8,7 +8,7 @@ namespace seneca {
       int m_value;
       int m_minValue;
       int m_maxValue;
-      char m_title[21];  // Dynamic C-string for the m_title
+      char m_title[21];  
       void initialize(const char* titleParam, int val, int minv, int maxv);
    public:
       // Constructors: called by the system at the moment of creation
@@ -16,12 +16,19 @@ namespace seneca {
       ValidatedInt(const char* titleParam, int val, int minv, int maxv);
       ~ValidatedInt() = default;
       // methods: do things uisng the specs
-      void setValue( int newVal);
+      ValidatedInt& setValue( int newVal);
       int getValue()const; // (Only C++)I can not change my owner
                            // getValue method, cannot change the attribute
-      void display()const; // I can not change my owner
-      void addToValue(int amount);
-      void reduceValue(int amount);
+      const ValidatedInt& display()const; // I can not change my owner
+      ValidatedInt& add(int amount);
+      ValidatedInt& operator+=(int amount);
+      ValidatedInt& operator-=(int amount);
+      ValidatedInt operator- (int amount)const;
+      ValidatedInt& operator++(); // prefix
+      ValidatedInt operator++(int); // postfix, the int is just flag to indicate postfix
+      operator int()const;
+      int operator[](size_t index)const;
+
    };
 
 }

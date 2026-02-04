@@ -34,7 +34,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Operators.md">
+    <None Include="readme.md">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

@@ -28,7 +28,7 @@ namespace seneca {
 
 
    // Member function: validates and sets the m_value (clamps to [min, max])
-   void ValidatedInt::setValue(int newVal) {
+   ValidatedInt& ValidatedInt::setValue(int newVal) {
       if (newVal < m_minValue) {
          m_value = m_minValue;
       }
@@ -38,6 +38,7 @@ namespace seneca {
       else {
          m_value = newVal;
       }
+      return *this;
    }
    // Member function: gets the current m_value
    int ValidatedInt::getValue() const {
@@ -45,21 +46,61 @@ namespace seneca {
    }
 
    // Member function: displays the current state
-   void ValidatedInt::display() const {
+  const ValidatedInt& ValidatedInt::display() const {
       std::cout
          << "Title: " << (m_title ? m_title : "No Title")
          << " Value: " << m_value
          << " (range: " << m_minValue
          << " to " << m_maxValue << ")" << std::endl;
+      return *this;
    }
 
-   // Member function: adds an amount to the m_value (with validation)
-   void ValidatedInt::addToValue(int amount) {
-      setValue(m_value + amount);  // Reuse setValue to clamp after addition
-   }
+  //// Member function: adds an amount to the m_value (with validation)
+  //ValidatedInt& ValidatedInt::add(int amount) {
+  //   setValue(m_value + amount);  // Reuse setValue to clamp after addition
+  //   return *this;
+  //}
 
-   // Member function: reduces the m_value by an amount (with validation)
-   void ValidatedInt::reduceValue(int amount) {
+  // Member function: adds an amount to the m_value (with validation)
+  ValidatedInt& ValidatedInt::operator+=(int amount) {
+     setValue(m_value + amount);  // Reuse setValue to clamp after addition
+     return *this;
+  }
+
+  // Member function: reduces the m_value by an amount (with validation)
+   ValidatedInt& ValidatedInt::operator-=(int amount) {
       setValue(m_value - amount);  // Reuse setValue to clamp after subtraction
+      return *this;
+   }
+   ValidatedInt ValidatedInt::operator-(int amount)const{
+      ValidatedInt reduced(m_title, m_value-amount, m_minValue, m_maxValue);
+      return reduced;
+   }
+   ValidatedInt& ValidatedInt::operator++() {
+      return operator+=(1);
+   }
+   ValidatedInt ValidatedInt::operator++(int) {
+      ValidatedInt before = *this;
+      operator+=(1);
+      return before;
+   }
+   ValidatedInt::operator int() const   {
+      return m_value;
+   }
+   int ValidatedInt::operator[](size_t index)const {
+      int res{};
+      index = index % 3;
+      switch (index) {
+      case 0:
+         res = m_minValue;
+         break;
+      case 1:
+         res = m_value;
+         break;
+      case 2: 
+         res = m_maxValue;
+         break;
+      }
+      return res;
    }
 }
