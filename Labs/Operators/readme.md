@@ -34,6 +34,7 @@ In this workshop you will practise:
   * prefix `++`, postfix `++`
   * `[]` (subscript) in two forms
   * type conversion to `const char*`
+  * `=` to assign a MyString object to a C-String
 * Writing stream-friendly methods using `ostream` and `istream`
 
 All of this will be done using **fixed stack memory** (no dynamic memory).
@@ -132,6 +133,15 @@ int length() const;
 
 # Operator Overloads
 
+### A) `operator=`
+
+```cpp
+MyString& operator=(const char* c_str);
+```
+
+Sets the MyString object to a C-String 
+
+---
 ### A) `operator+=`
 
 ```cpp
