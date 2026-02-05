@@ -13,7 +13,7 @@ namespace seneca{
        ~MyString() = default;
        std::ostream& display(std::ostream& ostr = std::cout) const;
        std::istream& read(std::istream& istr = std::cin);
-       int length() const;
+       int length() const;  //<< we have forgot to implement lenght!!!!
        MyString& operator+=(const MyString& other);
        MyString& operator=(const char* c_str);
        MyString operator+(const MyString& other) const;
