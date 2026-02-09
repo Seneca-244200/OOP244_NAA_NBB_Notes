@@ -175,10 +175,10 @@ Add one space BEFORE the string.
 ### D) Postfix `++`
 
 ```cpp
-MyString& operator++(int);
+MyString operator++(int);
 ```
 
-Add one space AFTER the string. This ++ does not behave like ++ in integers
+Add one space AFTER the string.
 
 ---
 
