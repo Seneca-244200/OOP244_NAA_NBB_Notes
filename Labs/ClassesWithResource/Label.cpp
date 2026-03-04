@@ -10,11 +10,13 @@ namespace seneca {
             strcpy(m_text, text, 60);
         }
     }
+
+
     ostream& Label::print(ostream& ostr) const{
         int len = m_text ? strlen(m_text)+4 : 0;
         if (len) {
             for (int i = 0; i < len; ostr << m_fill, i++);
-            ostr << endl  << " " <<  m_fill << m_text << " " <<  m_fill << endl;
+            ostr << endl  <<  m_fill<< " "  << m_text << " " <<  m_fill << endl;
             for (int i = 0; i < len; ostr << m_fill, i++);
             ostr << endl;
         }

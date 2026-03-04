@@ -7,6 +7,7 @@ namespace seneca {
         char* m_text{};
     public:
         Label(const char* text = nullptr, char fill = '*');
+
         std::ostream& print(std::ostream& ostr = std::cout)const;
     };
 }
