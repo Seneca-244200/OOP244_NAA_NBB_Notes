@@ -44,5 +44,5 @@ You are given the `Label` module exactly as shown (the header + source), along w
 ### Testing and submission:
 
 ```bash
-~fardad.soleimanloo/submit 244/ro5
+~fardad.soleimanloo/submit 244/labs/ro5
 ```
