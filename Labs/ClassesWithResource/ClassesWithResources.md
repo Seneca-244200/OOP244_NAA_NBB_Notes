@@ -41,3 +41,8 @@ You are given the `Label` module exactly as shown (the header + source), along w
 * Copying must not share the same `m_text` pointer between objects.
 * Truncation to **60 characters** must not overflow memory and must remain properly null-terminated.
 
+### Testing and submission:
+
+```bash
+~fardad.soleimanloo/submit 244/ro5
+```
