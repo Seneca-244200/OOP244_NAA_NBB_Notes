@@ -1,0 +1,12 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="1-Animal/1-Animal.vcxproj" />
+  <Project Path="2-Cat/2-Cat.vcxproj" />
+  <Project Path="3-BaseRefAndPtr/3-BaseRefAndPtr.vcxproj">
+    <Platform Project="Win32" />
+  </Project>
+  <Project Path="l-Mar09.vcxproj" />
+</Solution>
