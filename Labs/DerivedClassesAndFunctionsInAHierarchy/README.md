@@ -12,7 +12,8 @@ By the end of this lab, you should be able to:
 * use an inherited member function without overriding it
 * override a base class member function and completely replace its behaviour
 * override a base class member function and extend its behaviour by calling the base class version
-
+* add a new feature to a derived class that does not exist in the base class
+  
 ---
 
 ## Lab Description
@@ -35,6 +36,8 @@ Your `Airplane` class must demonstrate all three of the following cases:
 * using a base class function **without overriding it**
 * overriding a base class function **without using the base version**
 * overriding a base class function **by reusing the base version**
+
+In addition, your `Airplane` class must have one new behaviour that does not exist in `Vehicle`.
 
 ---
 
@@ -145,7 +148,31 @@ If a negative value is received by the mutator, the altitude must become `0`.
 
 ---
 
-### 4. Use a Base Class Function Without Overriding It
+### 4. Add an Airplane-Specific Feature
+
+Your `Airplane` class must have a new member function named:
+
+```cpp
+void climb(int value);
+```
+
+This function changes the altitude by the given value.
+
+* a positive value increases altitude
+* a negative value decreases altitude
+* altitude must never become negative
+* if the result would become negative, store `0`
+
+Examples:
+
+* if altitude is `30000` and `climb(2000)` is called, the new altitude becomes `32000`
+* if altitude is `32000` and `climb(-40000)` is called, the new altitude becomes `0`
+
+This function does not exist in `Vehicle`, so it is a feature added only to the derived class.
+
+---
+
+### 5. Use a Base Class Function Without Overriding It
 
 Do **not** override the following function:
 
@@ -159,7 +186,7 @@ This demonstrates using a base class function without overriding it.
 
 ---
 
-### 5. Override a Base Class Function Without Using the Base Version
+### 6. Override a Base Class Function Without Using the Base Version
 
 Override the `move()` function in `Airplane`.
 
@@ -185,7 +212,7 @@ This demonstrates overriding a base class function and completely replacing its 
 
 ---
 
-### 6. Override a Base Class Function by Reusing the Base Version
+### 7. Override a Base Class Function by Reusing the Base Version
 
 Override the `display(std::ostream&) const` function in `Airplane`.
 
@@ -219,7 +246,7 @@ This demonstrates extending a base class function by reusing the base version.
 
 ## Expected Behaviour Summary
 
-Your `Airplane` class must demonstrate the following three cases:
+Your `Airplane` class must demonstrate the following four cases:
 
 ### Inherited as-is
 
@@ -232,6 +259,10 @@ Override `move()` and do not call `Vehicle::move()`.
 ### Extended
 
 Override `display(std::ostream&) const` and call `Vehicle::display(os)` before adding the altitude.
+
+### New derived-class behaviour
+
+Implement `climb(int)` as an `Airplane`-only feature.
 
 ---
 
@@ -250,6 +281,14 @@ A default-constructed `Airplane` should behave as follows:
 ### Altitude Validation
 
 Any negative altitude must be stored as `0`.
+
+### Climbing
+
+Calling `climb(int)` changes the altitude:
+
+* positive values increase altitude
+* negative values decrease altitude
+* altitude never drops below `0`
 
 ### Movement
 
@@ -327,10 +366,12 @@ You should focus on:
 * correct public inheritance
 * correct class design for `Airplane`
 * correct handling of altitude
+* correct implementation of `climb(int)`
 * proper use of inherited functionality
 * proper overriding of `move()`
 * proper overriding of `display()` using the base class version
 * correct output formatting
+
 
 ---
 
@@ -341,5 +382,6 @@ This lab is designed to help you understand that in a class hierarchy:
 * some inherited functions are used as they are
 * some functions are completely replaced in the derived class
 * some functions are extended by reusing the base class version
+* some functions exist only in the derived class
 
 That is the main idea behind this exercise.

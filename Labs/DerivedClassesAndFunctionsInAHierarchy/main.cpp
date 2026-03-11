@@ -23,7 +23,16 @@ int main() {
    a2.accelerate(50);
    a2.display(cout);
    cout << endl;
-   a2.accelerate(-800);
+   a2.accelerate(-200);
+   a2.display(cout);
+   cout << endl;
+
+   cout << endl;
+   cout << "---- Airplane-specific climb() feature ----" << endl;
+   a2.climb(2000);
+   a2.display(cout);
+   cout << endl;
+   a2.climb(-5000);
    a2.display(cout);
    cout << endl;
 
