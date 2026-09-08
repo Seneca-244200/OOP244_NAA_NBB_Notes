@@ -1,4 +1,4 @@
-# OOP244 NAA and NRA Notes
+# OOP244 NAA and NBB Notes
 ## Mac Users
 If you are working on a Mac, you are required to learn and work with Visual Studio as an advanced IDE, especially in future semesters. To use Visual Studio on a Mac, you can either do all the git commands through the command line and use XCode (which you cannot use in future Windows-related subjects), or you can install a Virtual Machine and run Windows on your Mac. This will have Windows running in a window on your Mac without losing your Mac settings and features.
 
