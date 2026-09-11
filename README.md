@@ -26,8 +26,8 @@ For Help and office times, click on my  [Office and Emergency Online Sessions](h
 | Per | Start / Stop | Monday                                  | Tuesday | Wednesday                              | Thursday | Friday                                    | Saturday | Sunday |
 | --: | :----------: | --------------------------------------- | ------- | -------------------------------------- | -------- | ----------------------------------------- | -------- | ------ |
 |   0 |  07:05-07:55 |                                         |         |                                        |          |                                           |          |        |
-|   1 |  08:00-08:50 |                                         |         |                                        |          | OOP244NBBL<br>LAB<br>C4030<br>In Person  |          |        |
-|   2 |  08:55-09:45 |                                         |         |                                        |          | OOP244NBBL<br>LAB<br>C4030<br>In Person  |          |        |
+|   1 |  08:00-08:50 |                                         |         |                                        |          | OOP244NBBL<br>LAB<br>A3519<br>In Person  |          |        |
+|   2 |  08:55-09:45 |                                         |         |                                        |          | OOP244NBBL<br>LAB<br>A3519<br>In Person  |          |        |
 |   3 |  09:50-10:40 | OOP345NAA<br>LEC<br>B4059<br>Flexible  |         |                                        |          |                                           |          |        |
 |   4 |  10:45-11:35 | OOP345NAA<br>LEC<br>B4059<br>Flexible  |         |                                        |          | OOP345NAAL<br>LAB<br>A3515<br>In Person  |          |        |
 |   5 |  11:40-12:30 | OOP244NBB<br>LEC<br>B1029<br>In Person |         |                                        |          | OOP345NAAL<br>LAB<br>A3515<br>In Person  |          |        |
