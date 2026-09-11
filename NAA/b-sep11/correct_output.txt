@@ -1,0 +1,27 @@
+Script started on Tue 06 May 2025 04:45:30 PM EDT
+==155501== Memcheck, a memory error detector
+==155501== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==155501== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==155501== Command: ws.exe
+==155501== 
+#### Assignment Zero ####
+Subject and Section:
+OOP244 NXX
+Name:
+Fred Soley
+Student Number:
+999123123
+Email:
+fsoleima@myseneca.ca
+Github repository URL:
+https://github.com/.../OOP244-Works
+==155501== 
+==155501== HEAP SUMMARY:
+==155501==     in use at exit: 0 bytes in 0 blocks
+==155501==   total heap usage: 1 allocs, 1 frees, 72,704 bytes allocated
+==155501== 
+==155501== All heap blocks were freed -- no leaks are possible
+==155501== 
+==155501== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Script done on Tue 06 May 2025 04:45:31 PM EDT
