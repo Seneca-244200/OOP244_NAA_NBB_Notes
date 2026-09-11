@@ -1,4 +1,4 @@
-# OOP244 NRA  In-class Notes
+# OOP244 NBB  In-class Notes
 ## Recordings of Previous Lecture Sessions
 
 
