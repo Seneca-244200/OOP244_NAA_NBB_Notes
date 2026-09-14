@@ -3,16 +3,14 @@ using namespace std;
 struct Coord {
    int x;
    int y;
-   void print() {
-      cout << "x: " << x << ", y: " << y << endl;
-   }
 };
-
+void print(Coord* c) {
+   cout << c->x << " " << c->y << endl;
+}
 int main() {
-   Coord a, b = { 50, 100 };
+   Coord a;
    a.x = 10;
    a.y = 20;
-   a.print();
-   b.print();
+   print(&a);
    return 0;
 }

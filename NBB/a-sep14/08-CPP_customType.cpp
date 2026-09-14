@@ -7,7 +7,6 @@ struct Coord {
       cout << "x: " << x << ", y: " << y << endl;
    }
 };
-
 int main() {
    Coord a, b = { 50, 100 };
    a.x = 10;
