@@ -10,8 +10,8 @@ long
 long long
 
 floating points
-float
-double 
+float  
+double 0.0000012304567      123.4567     1234.5678
 long double
 
 
