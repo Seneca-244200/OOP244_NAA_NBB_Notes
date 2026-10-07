@@ -1,0 +1,15 @@
+Binary
+
+A @ B
+
+i=10, j= 20;
+
+i + j;  // binary operator with no side effect
+
+i += j; // binary operator with side effect
+
+i = j;
+
+
+
+
