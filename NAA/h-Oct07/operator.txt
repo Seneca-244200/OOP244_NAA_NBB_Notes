@@ -1,0 +1,18 @@
+Binary operators
+@: operator, 
+A and B are operands
+
+A @ B
+
+A + B // no side effect
++ returns something and A and B remain the same
+
+
+A += B  // has side effect
++= return something and A or B may change after
+
+Unary Operators:
+@: operator
+A: operand
+
+@A
