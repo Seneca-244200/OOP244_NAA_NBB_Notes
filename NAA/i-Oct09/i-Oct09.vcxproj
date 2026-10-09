@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{7d08f59a-4569-482e-b789-8d722ebd1aee}</ProjectGuid>
-    <RootNamespace>gOct09</RootNamespace>
+    <ProjectGuid>{7f5ff86a-0e7a-4d36-84a3-dd550e11d538}</ProjectGuid>
+    <RootNamespace>iOct09</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,14 +139,10 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Mark.h" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="Mark.cpp" />
-    <ClCompile Include="prg.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="operators.txt" />
+    <ClInclude Include="Mark.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
