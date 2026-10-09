@@ -7,7 +7,13 @@ int main() {
    clog.setstate(ios::failbit);
    cout << "OOP244NAA - Oct 09" << endl;
    Mark M = 20.34678, N = 49, S;
-   S = 12.3 + N;// Mark operator+(double left, const Mark& M)
+   N.print() << endl;
+   S.print() << endl;
+
+   S = N++; // Mark Mark::operator++(int);
+
+   N.print() << endl;
+   S.print() << endl;
 
    return 0;
 }
