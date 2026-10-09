@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Mark.cpp" />
+    <ClCompile Include="prg.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Mark.h" />
