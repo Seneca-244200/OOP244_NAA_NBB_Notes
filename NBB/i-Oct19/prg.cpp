@@ -24,16 +24,21 @@ public:
       return ostr;
    }
 };
-
+istream& operator>>(istream& left, Employee& right) {
+   return right.read(left);
+}
+ostream& operator<<(ostream& left,const Employee& right) {
+   return right.print(left);
+}
 int main() {
    cout << "OOP244 NBB - OCT 19" << endl;
    Employee E;
    cout << "Employee info\n> ";
-   while (!E.read(cin)) {
+   while (cin >> E) {
       cin.clear();
       cin.ignore(10000, '\n');
       cout << "Bad employee record" << endl;
    }
-   E.print(cout);
+   cout << E << endl;
    return 0;
 }
