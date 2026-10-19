@@ -11,11 +11,12 @@ int getInt(const char* prompt = nullptr) {
      // if (!cin) {  // if fail
       if(cin){ // if everything good!
          done = true;
+         cin.ignore(10000, '\n');
       }
       else {
          cin.clear();
          cin.ignore(10000, '\n');
-         cout << "Invalid integer" << endl;
+         cout << "Invalid integer\n> ";
       }
    } while (!done);
    return num;
