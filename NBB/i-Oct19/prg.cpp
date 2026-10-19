@@ -10,19 +10,18 @@ int getInt(const char* prompt = nullptr) {
      // if (cin.fail()) { // if fail
      // if (!cin) {  // if fail
       if(cin){ // if everything good!
-         if (cin.get() == '\n') {
+         if (cin.peek() == '\n') {
             done = true;
          }
          else {
             cout << "Only an integer please\n> ";
-            cin.ignore(10000, '\n');
          }
       }
       else {
          cin.clear();
-         cin.ignore(10000, '\n');
          cout << "Invalid integer\n> ";
       }
+      cin.ignore(10000, '\n');
    } while (!done);
    return num;
 }
