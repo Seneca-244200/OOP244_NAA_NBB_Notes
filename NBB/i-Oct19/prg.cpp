@@ -1,38 +1,39 @@
 #include <iostream>
 using namespace std;
-
-int getInt(const char* prompt = nullptr) {
-   int num{};
-   bool done = false;
-   if (prompt) cout << prompt;
-   do {
-      cin >> num;
-     // if (cin.fail()) { // if fail
-     // if (!cin) {  // if fail
-      if(cin){ // if everything good!
-         if (cin.peek() == '\n') {
-            done = true;
-         }
-         else {
-            cout << "Only an integer please\n> ";
-         }
+class Employee {
+   char m_name[128]{};
+   int m_empID{};
+   double m_salary{};
+public:
+   // Fred Soley,123456,12345.67<ENTER>
+   istream& read(istream& istr) {
+      istr.getline(m_name, 128, ',');
+      istr >> m_empID;
+      if (istr.get() != ',')//manually setting the state of istream to fail if the data is not 
+                            // a match to my business logic
+         istr.setstate(ios::failbit);
+      istr >> m_salary;
+      if (istr.get() != '\n')
+         istr.setstate(ios::failbit);
+      return istr;
+   }
+   ostream& print(ostream& ostr)const {
+      if (m_name[0]) {
+         ostr << m_name << ": (" << m_empID << " $" << m_salary <<")";
       }
-      else {
-         cin.clear();
-         cout << "Invalid integer\n> ";
-      }
-      cin.ignore(10000, '\n');
-   } while (!done);
-   return num;
-}
-
+      return ostr;
+   }
+};
 
 int main() {
    cout << "OOP244 NBB - OCT 19" << endl;
-   int a = 10, b = 20;
-   cout << a << " " << b << endl;
-   a = getInt("A: ");
-   b = getInt("B: ");
-   cout << a << " " << b << endl;
+   Employee E;
+   cout << "Employee info\n> ";
+   while (!E.read(cin)) {
+      cin.clear();
+      cin.ignore(10000, '\n');
+      cout << "Bad employee record" << endl;
+   }
+   E.print(cout);
    return 0;
 }
