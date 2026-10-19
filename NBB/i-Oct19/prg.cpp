@@ -34,7 +34,7 @@ int main() {
    cout << "OOP244 NBB - OCT 19" << endl;
    Employee E;
    cout << "Employee info\n> ";
-   while (cin >> E) {
+   while (!(cin >> E)) {
       cin.clear();
       cin.ignore(10000, '\n');
       cout << "Bad employee record" << endl;
