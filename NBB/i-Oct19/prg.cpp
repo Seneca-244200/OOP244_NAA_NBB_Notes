@@ -10,8 +10,13 @@ int getInt(const char* prompt = nullptr) {
      // if (cin.fail()) { // if fail
      // if (!cin) {  // if fail
       if(cin){ // if everything good!
-         done = true;
-         cin.ignore(10000, '\n');
+         if (cin.get() == '\n') {
+            done = true;
+         }
+         else {
+            cout << "Only an integer please\n> ";
+            cin.ignore(10000, '\n');
+         }
       }
       else {
          cin.clear();
@@ -28,8 +33,7 @@ int main() {
    int a = 10, b = 20;
    cout << a << " " << b << endl;
    a = getInt("A: ");
-   cout << "B: ";
-   cin >> b;
+   b = getInt("B: ");
    cout << a << " " << b << endl;
    return 0;
 }
