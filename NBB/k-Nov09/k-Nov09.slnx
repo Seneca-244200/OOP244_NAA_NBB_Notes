@@ -1,0 +1,27 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="1-Animal/1-Animal.vcxproj" />
+  <Project Path="2-Cat/2-Cat.vcxproj" />
+  <Project Path="3-BaseRefAndPtr/3-BaseRefAndPtr.vcxproj">
+    <Platform Project="Win32" />
+  </Project>
+  <Project Path="4-BaseRefAndPtrVirtual/4-BaseRefAndPtrVirtual.vcxproj">
+    <Platform Project="Win32" />
+  </Project>
+  <Project Path="5-BaseRefAndPtrPureVirtual/5-BaseRefAndPtrPureVirtual.vcxproj">
+    <Platform Project="Win32" />
+  </Project>
+  <Project Path="6-BaseRefAndPtrInterface/6-BaseRefAndPtrInterface.vcxproj">
+    <Platform Project="Win32" />
+  </Project>
+  <Project Path="7-ArrayOfInterfacePointers/7-ArrayOfInterfacePointers.vcxproj">
+    <Platform Project="Win32" />
+  </Project>
+  <Project Path="8-InterfaceAndOverLoadingForCout/8-InterfaceAndOverLoadingForCout.vcxproj">
+    <Platform Project="Win32" />
+  </Project>
+  <Project Path="k-Nov09.vcxproj" />
+</Solution>
