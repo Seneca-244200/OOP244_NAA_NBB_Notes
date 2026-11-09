@@ -18,5 +18,27 @@
     <ClCompile Include="prg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="aa0-BadAssignment.pptx">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="aa1-BadCopying.pptx">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="aa2-goodCopying.pptx">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="aa3-GoodAssigning.pptx">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

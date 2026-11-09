@@ -139,7 +139,17 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="LArray.cpp" />
     <ClCompile Include="prg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LArray.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="aa0-BadAssignment.pptx" />
+    <None Include="aa1-BadCopying.pptx" />
+    <None Include="aa2-goodCopying.pptx" />
+    <None Include="aa3-GoodAssigning.pptx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
