@@ -1,0 +1,30 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="1-Animal/1-Animal.vcxproj" Id="cd3e7cca-d918-4c7b-a430-04e6e4a28a11" />
+  <Project Path="2-Cat/2-Cat.vcxproj" Id="d36c0936-b2b7-4d6d-9ea9-b2a25b82d85c" />
+  <Project Path="3-BaseRefAndPtr/3-BaseRefAndPtr.vcxproj" Id="3b41b9fc-eaeb-4ac5-b709-f7248f085b52">
+    <Platform Project="Win32" />
+  </Project>
+  <Project Path="4-BaseRefAndPtrVirtual/4-BaseRefAndPtrVirtual.vcxproj" Id="8b249605-22a8-4883-8d00-458bb74d8c3c">
+    <Platform Project="Win32" />
+  </Project>
+  <Project Path="5-BaseRefAndPtrPureVirtual/5-BaseRefAndPtrPureVirtual.vcxproj" Id="863633d6-f16b-4fc4-b7cb-68d530dc7849">
+    <Platform Project="Win32" />
+  </Project>
+  <Project Path="6-BaseRefAndPtrInterface/6-BaseRefAndPtrInterface.vcxproj" Id="bcca8bec-cfe6-42fe-a372-01f92c1f8c29">
+    <Platform Project="Win32" />
+  </Project>
+  <Project Path="7-ArrayOfInterfacePointers/7-ArrayOfInterfacePointers.vcxproj" Id="85982e98-fe42-4dd5-9a24-d73736e3da98">
+    <Platform Project="Win32" />
+  </Project>
+  <Project Path="8-InterfaceAndOverLoadingForCout/8-InterfaceAndOverLoadingForCout.vcxproj" Id="30d6bfc4-4899-4f09-827b-fcfa0ef960b3">
+    <Platform Project="Win32" />
+  </Project>
+  <Project Path="9-FullWithConstructorMessages/9-FullWithConstructorMessages.vcxproj" Id="4550497a-fc60-4cee-9629-6fc9a30f3eae">
+    <Platform Project="Win32" />
+  </Project>
+  <Project Path="m-Nov011.vcxproj" Id="1bd830ee-7e03-4540-9b7b-dbfffe4debb5" />
+</Solution>
