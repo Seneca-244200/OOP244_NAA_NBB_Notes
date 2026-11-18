@@ -7,21 +7,21 @@ class Name {
    Name(const char theName[]);
    friend class Line;// if I want name to be only "owned" by Line
 };
-class Line {
-   size_t m_len{ 10 };
+class Person {
+   size_t m_age{ 10 };
    Name m_name{ "joe" };
 public:
-   Line();
-   Line(size_t len);
+   Person();
+   Person(size_t len);
 
 };
-Line::Line():m_name("No Name")  {// initialization section overrides the inline initialization
+Person::Person():m_name("No Name")  {// initialization section overrides the inline initialization
 }
-Line::Line(size_t len) : m_len(len), m_name("Something") {
+Person::Person(size_t len) : m_len(len), m_name("Something") {
 
 }
 int main() {
-   cout << "OOP244NBB - Nov09" << endl;
-   Line L1;
+   cout << "OOP244NAA - Nov11" << endl;
+   Person P1;
    return 0;
 }
